@@ -1,9 +1,13 @@
-import Fastify, { type FastifyInstance } from "fastify";
+import Fastify from "fastify";
 import { createPool } from "./routes/create_pool";
 import { getPools } from "./routes/get_pool";
-
+import cors from '@fastify/cors';
 
 const app = Fastify();
+
+app.register(cors, {
+  origin: '*'
+});
 
 app.register(createPool)
 app.register(getPools)
