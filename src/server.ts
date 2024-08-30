@@ -1,7 +1,9 @@
 import Fastify from "fastify";
 import { createPool } from "./routes/create_pool";
-import { getPools } from "./routes/get_pool";
+import { countPool } from "./routes/count_pool";
 import cors from '@fastify/cors';
+import { countUser } from "./routes/count_user";
+import { countGuess } from "./routes/count_Guess";
 
 const app = Fastify();
 
@@ -10,7 +12,9 @@ app.register(cors, {
 });
 
 app.register(createPool)
-app.register(getPools)
+app.register(countPool)
+app.register(countUser)
+app.register(countGuess)
 
 const PORT = 3333;
 

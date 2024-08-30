@@ -8,8 +8,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "prisma":{
-    "seed":"tsx prisma/seed.ts"
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   },
   "description": "",
   "devDependencies": {
@@ -24,6 +24,7 @@
     "@fastify/cors": "^9.0.1",
     "@prisma/client": "^5.19.0",
     "fastify": "^4.28.1",
-    "fastify-type-provider-zod": "^2.0.0"
+    "fastify-type-provider-zod": "^2.0.0",
+    "short-unique-id": "^5.2.0"
   }
 }
