@@ -1,16 +1,12 @@
 import { PrismaClient } from "@prisma/client";
-import type { FastifyInstance } from "fastify";
+import { FastifyInstance } from "fastify";
 import { z } from "zod";
 import { prisma } from "../lib/prisma";
 
-export async function countUser(app: FastifyInstance){
-  app.get('/users/count', async (request) => {
-    const [userCount, users] = await Promise.all([
-      prisma.user.count(),
-      prisma.user.findMany(),
-    ])
+export async function countUser(fastify: FastifyInstance){
+  fastify.get('/users/count', async () => {
+    const users = await prisma.user.count()
     return {
-      userCount,
       users,
     }
   }
